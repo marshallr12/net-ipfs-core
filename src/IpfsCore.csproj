@@ -8,8 +8,8 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
     <!-- developer build is always 0.42 -->
-    <AssemblyVersion>0.42</AssemblyVersion>
-    <Version>0.42</Version>
+    <AssemblyVersion>0.50</AssemblyVersion>
+    <Version>0.50</Version>
 
     <!-- Nuget specs -->
     <PackageId>Ipfs.Core</PackageId>
@@ -41,6 +41,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb;$(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <FileVersion>0.50.0.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
