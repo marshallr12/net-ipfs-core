@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Ipfs
+﻿namespace Ipfs
 {
     /// <summary>
     ///   A codec for Base-32.
@@ -36,9 +31,7 @@ namespace Ipfs
         ///   The string representation, in base 32, of the contents of <paramref name="input"/>.
         /// </returns>
         public static string Encode(byte[] input)
-        {
-            return SimpleBase.Base32.Rfc4648.Encode(input, false).ToLowerInvariant();
-        }
+        => SimpleBase.Base32.Rfc4648.Encode(input, false).ToLowerInvariant();
 
         /// <summary>
         ///   Converts an array of 8-bit unsigned integers to its equivalent string representation that is 
@@ -51,9 +44,7 @@ namespace Ipfs
         ///   The string representation, in base 32, of the contents of <paramref name="bytes"/>.
         /// </returns>
         public static string ToBase32(this byte[] bytes)
-        {
-            return Encode(bytes);
-        }
+        => Encode(bytes);
 
         /// <summary>
         ///   Converts the specified <see cref="string"/>, which encodes binary data as base 32 digits, 
@@ -69,9 +60,7 @@ namespace Ipfs
         ///   <paramref name="input"/> is case-insensitive and allows padding.
         /// </remarks>
         public static byte[] Decode(string input)
-        {
-            return SimpleBase.Base32.Rfc4648.Decode(input);
-        }
+        => SimpleBase.Base32.Rfc4648.Decode(input).ToArray();
 
         /// <summary>
         ///   Converts the specified <see cref="string"/>, which encodes binary data as base 32 digits, 
@@ -84,8 +73,6 @@ namespace Ipfs
         ///   An array of 8-bit unsigned integers that is equivalent to <paramref name="s"/>.
         /// </returns>
         public static byte[] FromBase32(this string s)
-        {
-            return Decode(s);
-        }
+        => Decode(s);
     }
 }

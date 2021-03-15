@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Ipfs
 {
     /// <summary>
@@ -33,9 +28,7 @@ namespace Ipfs
         ///   The string representation, in base 58, of the contents of <paramref name="bytes"/>.
         /// </returns>
         public static string Encode(byte[] bytes)
-        {
-            return SimpleBase.Base58.Bitcoin.Encode(bytes);
-        }
+        => SimpleBase.Base58.Bitcoin.Encode(bytes);
 
         /// <summary>
         ///   Converts an array of 8-bit unsigned integers to its equivalent string representation that is 
@@ -48,9 +41,7 @@ namespace Ipfs
         ///   The string representation, in base 58, of the contents of <paramref name="bytes"/>.
         /// </returns>
         public static string ToBase58(this byte[] bytes)
-        {
-            return Encode(bytes);
-        }
+        => Encode(bytes);
 
         /// <summary>
         ///   Converts the specified <see cref="string"/>, which encodes binary data as base 58 digits, 
@@ -63,9 +54,7 @@ namespace Ipfs
         ///   An array of 8-bit unsigned integers that is equivalent to <paramref name="s"/>.
         /// </returns>
         public static byte[] Decode(string s)
-        {
-            return SimpleBase.Base58.Bitcoin.Decode(s);
-        }
+        => SimpleBase.Base58.Bitcoin.Decode(s).ToArray();
 
         /// <summary>
         ///   Converts the specified <see cref="string"/>, which encodes binary data as base 58 digits, 
@@ -78,8 +67,6 @@ namespace Ipfs
         ///   An array of 8-bit unsigned integers that is equivalent to <paramref name="s"/>.
         /// </returns>
         public static byte[] FromBase58(this string s)
-        {
-            return Decode(s);
-        }
+        => Decode(s);
     }
 }
